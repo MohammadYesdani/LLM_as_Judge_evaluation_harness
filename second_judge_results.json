@@ -1,0 +1,80 @@
+[
+  {
+    "id": 0,
+    "question": "What is the capital of Japan?",
+    "second_verdict": "B",
+    "second_reasoning": "Answer B is direct and precise, providing the correct answer immediately. Answer A is overly verbose and includes unnecessary, robotic steps to answer a simple, well-known factual question."
+  },
+  {
+    "id": 1,
+    "question": "How many continents are there on Earth?",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is far superior because it accurately explains that the number of continents depends on the cultural and geographic model being used, providing a comprehensive breakdown of the five, six, and seven-continent systems. Answer B is overly simplistic and ignores the lack of a single global consensus on this question."
+  },
+  {
+    "id": 2,
+    "question": "What gas do plants absorb from the air for photosynthesis?",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is better because, while both answers are accurate, Answer A provides a complete, educational explanation that includes the chemical equation and step-by-step reasoning to support the conclusion."
+  },
+  {
+    "id": 3,
+    "question": "Who wrote the play Romeo and Juliet?",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is better because it not only provides the correct author but also includes helpful historical context, such as the estimated dates of composition and publication, making it more complete than Answer B."
+  },
+  {
+    "id": 4,
+    "question": "What is the boiling point of water at sea level in Celsius?",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is better because it provides complete context, explaining the relationship between sea level pressure and the Celsius scale, whereas Answer B is extremely brief and lacks any explanation."
+  },
+  {
+    "id": 5,
+    "question": "Explain why the sky appears blue, in two sentences.",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is slightly better because it includes the specific scientific term \"Rayleigh scattering,\" which adds completeness and accuracy. Additionally, Answer A flows more naturally by building up to the conclusion rather than starting with a redundancy of the prompt."
+  },
+  {
+    "id": 6,
+    "question": "Explain the difference between weather and climate.",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is far superior because it provides a comprehensive, structured explanation of the concepts, complete with clear indicators, examples, a comparative table, and a memorable analogy. Answer B, while accurate, is too brief and lacks the depth needed to thoroughly explain the differences to someone seeking to understand them."
+  },
+  {
+    "id": 7,
+    "question": "In simple terms, what is compound interest?",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is much better because it uses a clear step-by-step numerical example and a relatable \"snowball\" analogy to explain the concept, whereas Answer B is too brief to ensure a beginner truly understands how the mechanism works."
+  },
+  {
+    "id": 8,
+    "question": "Why does ice float on water?",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is far superior because it provides a comprehensive, step-by-step explanation of the chemical and physical mechanisms—such as hydrogen bonding and crystal lattice structure—that cause ice to be less dense than liquid water, whereas Answer B is overly brief and fails to explain *why* the density difference exists."
+  },
+  {
+    "id": 9,
+    "question": "What causes the seasons to change on Earth?",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is significantly better because it provides a complete, clear, and detailed explanation of how the axial tilt and orbit work together to cause seasonal changes, while also addressing a common misconception. Answer B, although accurate, is far too brief and lacks the necessary context and explanation."
+  },
+  {
+    "id": 10,
+    "question": "A shirt costs $40 and is discounted by 25%. What is the final price?",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is better because it provides a clear, step-by-step explanation of how to calculate the final price, whereas Answer B only provides the final number without any context or calculation."
+  },
+  {
+    "id": 11,
+    "question": "If a train travels 60 km in 45 minutes, what is its speed in km/h?",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is much better because it provides a complete, step-by-step explanation of how to convert the units and calculate the final speed, whereas Answer B only provides the final result without any context or working."
+  },
+  {
+    "id": 12,
+    "question": "What is 15% of 240?",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is much better because it not only provides the correct answer but also explains the step-by-step process, offers a helpful mental math strategy, and includes a verification step, whereas Answer B only provides the final number."
+  }
+]
