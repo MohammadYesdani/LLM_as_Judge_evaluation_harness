@@ -76,5 +76,149 @@
     "question": "What is 15% of 240?",
     "second_verdict": "A",
     "second_reasoning": "Answer A is much better because it not only provides the correct answer but also explains the step-by-step process, offers a helpful mental math strategy, and includes a verification step, whereas Answer B only provides the final number."
+  },
+  {
+    "id": 13,
+    "question": "I have 3 apples and buy 2 more bags with 4 apples each. How many apples total?",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is better because it provides a clear, step-by-step explanation of how the final result was calculated, whereas Answer B only provides the final number without any context."
+  },
+  {
+    "id": 14,
+    "question": "A rectangle is 8 cm long and 5 cm wide. What is its area and perimeter?",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is superior because it provides a clear, step-by-step explanation of the calculations, including the relevant formulas and correct units, whereas Answer B only provides the final results."
+  },
+  {
+    "id": 15,
+    "question": "If it takes 5 machines 5 minutes to make 5 widgets, how long for 100 machines to make 100 widgets?",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is better because it not only provides the correct answer but also explains the step-by-step logic clearly, making it much more complete and helpful than the one-phrase response in Answer B."
+  },
+  {
+    "id": 16,
+    "question": "Sarah is twice as old as Tom. In 5 years their ages sum to 40. How old is each now?",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is much better because it provides a clear, step-by-step algebraic explanation of how to solve the problem, including a verification step, whereas Answer B only provides the final numbers without any context or explanation."
+  },
+  {
+    "id": 17,
+    "question": "Write a 4-line poem about the ocean at night.",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is superior because it maintains a flawless iambic pentameter throughout, creating a smooth and soothing rhythm that perfectly mirrors the movement of the ocean. Additionally, its imagery is more evocative and avoids the slightly awkward metrical phrasing found in the final line of Answer B."
+  },
+  {
+    "id": 18,
+    "question": "Write a short, polite email declining a meeting invitation.",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is better because it provides a highly professional, adaptable email template with options for rescheduling, accompanied by useful structural advice and a helpful checklist. Answer B, while polite, is extremely basic and lacks the adaptability of Answer A."
+  },
+  {
+    "id": 19,
+    "question": "Suggest three creative names for a coffee shop aimed at students.",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is superior because it not only provides highly creative and distinct name suggestions but also includes detailed explanations of the concept and psychology behind each name. Answer B only lists names without any context or explanation, making Answer A much more complete and professional."
+  },
+  {
+    "id": 20,
+    "question": "Write a two-sentence product description for a reusable water bottle.",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is more versatile and appealing as a product description, as its mention of keeping drinks at the \"perfect temperature\" encompasses both hot and cold beverages, and its second sentence effectively highlights diverse, real-world use cases."
+  },
+  {
+    "id": 21,
+    "question": "Rewrite this sentence to be more formal: 'Hey, can you send me that file real quick?'",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is much more complete and educational, as it offers multiple excellent formal options based on context and explains the specific grammatical and stylistic changes made to increase the formality."
+  },
+  {
+    "id": 22,
+    "question": "Summarize the water cycle in three sentences.",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is more complete and detailed within the three-sentence limit, explicitly naming key processes like condensation and infiltration, as well as specific forms of precipitation. Answer B is accurate but overly brief, omitting important details like ground absorption."
+  },
+  {
+    "id": 23,
+    "question": "Explain what an API is to someone who has never coded.",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is much better because it provides a complete, structured, and easy-to-understand explanation with real-world examples, whereas Answer B is far too brief to help a complete beginner truly grasp how an API functions in technology."
+  },
+  {
+    "id": 24,
+    "question": "What are the main differences between a list and a dictionary in Python?",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is much more comprehensive and clear, providing a detailed breakdown of performance, use cases, syntax, and requirements for keys, along with a helpful summary table. Answer B, while accurate, is far too brief and lacks the depth needed for a complete understanding of the differences between the two data structures."
+  },
+  {
+    "id": 25,
+    "question": "Write a Python function that returns whether a number is even.",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is superior because, while both code implementations are correct and efficient, Answer A provides excellent clarity and completeness by explaining the logic, including a docstring, and walking through test cases."
+  },
+  {
+    "id": 26,
+    "question": "What does the word 'ubiquitous' mean, and use it in a sentence.",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is the superior response because it provides a more comprehensive explanation of the word, including its etymology, nuance, and synonyms, while still delivering a clear definition and a well-crafted example sentence. Answer B is accurate but extremely minimal."
+  },
+  {
+    "id": 27,
+    "question": "List three pros and three cons of remote work.",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is superior because it provides detailed explanations and context for each pro and con, offering a much more complete and insightful analysis than the brief bulleted list in Answer B."
+  },
+  {
+    "id": 28,
+    "question": "Explain the concept of supply and demand with a simple example.",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is far superior because it provides clear definitions, develops a highly relatable and structured example (the lemonade stand) across multiple scenarios, and explains the key concept of market equilibrium. Answer B is far too brief, lacking the depth, clarity, and complete example required to properly explain the concept."
+  },
+  {
+    "id": 29,
+    "question": "What is the difference between a virus and bacteria?",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is much more comprehensive and educational, providing detailed breakdowns of biological structure, reproduction, treatment, and health impacts, along with a helpful summary table. Answer B, while accurate, is too brief to fully explain the important distinctions between the two."
+  },
+  {
+    "id": 30,
+    "question": "A farmer has chickens and cows totaling 20 animals and 56 legs. How many of each?",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is correct and provides a clear, step-by-step mathematical explanation to arrive at the right answer (12 chickens and 8 cows). Answer B is incorrect, as 8 chickens and 12 cows would result in 64 legs instead of 56."
+  },
+  {
+    "id": 31,
+    "question": "Explain recursion in programming using a real-world analogy.",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is far superior because it provides a highly detailed, accurate, and structured explanation of recursion, clearly mapping the analogy of nesting dolls to key programming concepts like the recursive step, the base case, and stack unwinding. Answer B is too brief and fails to adequately explain how recursion actually works or how a recursive function terminates."
+  },
+  {
+    "id": 32,
+    "question": "What are three practical tips for improving sleep quality?",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is much better because it provides detailed, actionable explanations and scientific reasoning for each tip, whereas Answer B is overly brief and lacks the context needed to implement the advice effectively."
+  },
+  {
+    "id": 33,
+    "question": "Translate 'Good morning, how are you?' into French.",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is superior because it provides a comprehensive explanation of both formal and informal translations, explaining the grammatical nuances of \"tu\" and \"vous,\" whereas Answer B only provides a single direct translation without context."
+  },
+  {
+    "id": 34,
+    "question": "Explain the difference between correlation and causation with an example.",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is much better because it provides a comprehensive explanation of the concepts, clearly breaking down the definitions, illustrating the example with a detailed explanation of the confounding variable, and explaining how researchers actually establish causation. Answer B, while accurate, is far too brief and lacks the depth needed for a complete understanding of the topic."
+  },
+  {
+    "id": 35,
+    "question": "If today is Wednesday, what day will it be 100 days from now?",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is correct and provides a clear, step-by-step mathematical explanation of how to arrive at the solution, whereas Answer B is incorrect."
+  },
+  {
+    "id": 36,
+    "question": "Write a haiku about autumn leaves.",
+    "second_verdict": "A",
+    "second_reasoning": "Both answers are completely identical and provide a beautifully written, structurally perfect haiku that follows the traditional 5-7-5 syllable count. Since they are identical, either choice is correct."
   }
 ]
