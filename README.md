@@ -1,4 +1,4 @@
-# LLM-as-Judge Reliability Harness
+# LLM_as_Judge Reliability Harness
 
 **Can you trust one AI to grade another AI's answers? This project measures it — and finds a bias that a naive first metric completely hides.**
 
@@ -9,9 +9,9 @@ Modern ML teams increasingly use one language model to evaluate the outputs of a
 - **A naive agreement metric said the judge was "perfect" (100%).** The judge agreed with my own hand-labels on all comparable questions. This looked like a great result — and was a warning sign, not a success.
 - **A controlled swap experiment exposed real position bias.** Re-running every judgment with the two answers swapped, the verdict flipped on **10% of questions**, and the judge preferred the first-shown answer on **55%** of all judgments.
 - **The bias concentrated entirely in subjective tasks.** All four flipped verdicts were open-ended writing prompts (a poem, a haiku, a product description, a summary). On questions with an objectively correct answer (math, logic), the judge was consistent and position-independent. Position bias appeared precisely where quality is ambiguous and there is no factual anchor.
-- **Independent validation of the ground truth:** a second, different model was used as an independent labeler to check my own hand-labels. `[Second-judge agreement with my labels: TO BE ADDED once all 40 verdicts are collected.]`
+- **An independent model validated the ground truth.** A second, different model (`gemini-3.5-flash`) agreed with my hand-labels on **100% of the 37 comparable questions** (3 ties excluded). This confirms the quality gap between answers is real and consistently perceived across a human and two separate models — not an artifact of my own judgment.
 
-**The takeaway:** the 100% agreement was partly an artifact of the experiment's setup — the stronger answer always sat in the position the judge happened to favor. Only a controlled swap test revealed the truth. This mirrors how model evaluation is actually done in practice: a flattering metric is a reason to dig deeper, not to stop.
+**The takeaway:** the first judge's 100% agreement was partly an artifact of the experiment's setup — the stronger answer always sat in the position the judge happened to favor. Only a controlled swap test revealed the truth. And because independent validation confirms the better answer genuinely *is* better, the judge's position-driven flips on subjective tasks cannot be explained away as the answers being too close to call — the bias is real. This mirrors how model evaluation is actually done in practice: a flattering metric is a reason to dig deeper, not to stop.
 
 ## How it works
 
@@ -24,6 +24,17 @@ The pipeline is deliberately split into independent stages so that expensive API
 5. **Swap experiment** (`judge_swapped.py`) — re-judges every pair with answer positions reversed. Output: `judge_results_swapped.json`.
 6. **Position-bias analysis** (`analyze_bias.py`) — combines both runs to compute the flip rate and directional position preference.
 7. **Independent validation** (`second_judge.py`) — a different model independently judges all 40, as a second opinion on the ground truth. Includes resume support and retry-with-backoff to survive free-tier rate limits and transient server errors. Output: `second_judge_results.json`.
+8. **Validation analysis** (`analyze_second_judge.py`) — compares the independent second judge against my hand-labels to check whether the ground truth holds up.
+
+## Results at a glance
+
+| Measurement | Result |
+|---|---|
+| Judge vs. my hand-labels (naive agreement) | 100% (37/37 comparable) |
+| Verdict flip rate under position swap | 10% (4/40) |
+| Judge's preference for the first-shown answer | 55% of all judgments |
+| Where flips occurred | 100% on subjective/open-ended tasks |
+| Independent second model vs. my hand-labels | 100% (37/37 comparable) |
 
 ## Methodology notes (and honest limitations)
 
@@ -36,17 +47,20 @@ The pipeline is deliberately split into independent stages so that expensive API
 
 - Python
 - Google Gemini API (free tier) via the `google-genai` library
+- `python-dotenv` for keeping the API key out of source code
 - Models: `gemini-3.1-flash-lite` (answer generation + primary judge), `gemini-3.5-flash` (independent second labeler)
 
 ## Setup
 
 ```bash
-# 1. Install the dependency
-pip install google-genai
+# 1. Install dependencies
+pip install google-genai python-dotenv
 
 # 2. Add your free Gemini API key
 #    Get one at https://aistudio.google.com  (no credit card required)
-#    Paste it into the client = genai.Client(api_key="...") line in each script
+#    Create a file named .env in the project root containing:
+#        GEMINI_API_KEY=your_key_here
+#    The scripts read the key from this file; .env is gitignored and never committed.
 ```
 
 ## Running the pipeline
@@ -54,21 +68,23 @@ pip install google-genai
 Run the scripts in order:
 
 ```bash
-python generate_answers.py     # -> answers.json
-python judge.py                # -> judge_results.json
-python label.py                # -> human_labels.json (interactive)
-python analyze.py              # prints agreement + disagreements
-python judge_swapped.py        # -> judge_results_swapped.json
-python analyze_bias.py         # prints the position-bias results
-python second_judge.py         # -> second_judge_results.json (resumable)
+python generate_answers.py       # -> answers.json
+python judge.py                  # -> judge_results.json
+python label.py                  # -> human_labels.json (interactive)
+python analyze.py                # prints agreement + disagreements
+python judge_swapped.py          # -> judge_results_swapped.json
+python analyze_bias.py           # prints the position-bias results
+python second_judge.py           # -> second_judge_results.json (resumable)
+python analyze_second_judge.py   # prints the ground-truth validation
 ```
 
-`second_judge.py` is safe to re-run: it skips already-saved verdicts and continues where it stopped, which matters because the free tier caps daily requests.
+`second_judge.py` is safe to re-run: it skips already-saved verdicts and continues where it stopped, which matters because the free tier caps daily requests. It also retries transient server errors with exponential backoff.
 
 ## What I learned
 
 - How LLM-as-judge evaluation works, and why raw agreement is a misleading metric on its own.
 - How to design a controlled experiment (position swapping) to isolate a specific bias.
+- Why independent validation matters — and how it can *strengthen* a finding by ruling out alternative explanations.
 - Practical engineering for unreliable external APIs: checkpointing results to disk, resume-on-restart, and retry-with-exponential-backoff for transient (503) and rate-limit (429) errors.
 - The value of distrusting a result that looks too clean.
 
@@ -83,9 +99,11 @@ analyze.py                    # stage 4
 judge_swapped.py              # stage 5
 analyze_bias.py               # stage 6
 second_judge.py               # stage 7 (resumable, with retry/backoff)
+analyze_second_judge.py       # stage 8
 answers.json                  # generated data
 judge_results.json            # generated data
 human_labels.json             # generated data
 judge_results_swapped.json    # generated data
 second_judge_results.json     # generated data
+.env                          # your API key (gitignored, not committed)
 ```

@@ -220,5 +220,23 @@
     "question": "Write a haiku about autumn leaves.",
     "second_verdict": "A",
     "second_reasoning": "Both answers are completely identical and provide a beautifully written, structurally perfect haiku that follows the traditional 5-7-5 syllable count. Since they are identical, either choice is correct."
+  },
+  {
+    "id": 37,
+    "question": "What is the greenhouse effect, and why does it matter?",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is much better because it provides a comprehensive, step-by-step explanation of the physical mechanism of the greenhouse effect and clearly details both its positive role in keeping the Earth habitable and the negative consequences of its human-induced enhancement. Answer B is too brief and lacks the depth required to fully understand the process and its significance."
+  },
+  {
+    "id": 38,
+    "question": "Give step-by-step instructions to make a basic peanut butter sandwich.",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is superior because it is much more complete and clear, providing a helpful list of ingredients and tools, detailed step-by-step instructions, and useful options like toasting or cutting the sandwich. Answer B is overly brief and lacks necessary details like workspace preparation and the tools required."
+  },
+  {
+    "id": 39,
+    "question": "Explain why dividing by zero is undefined in mathematics.",
+    "second_verdict": "A",
+    "second_reasoning": "Answer A is far superior because it provides a thorough, step-by-step mathematical explanation using the inverse relationship of multiplication and division, addressing both non-zero and zero numerators, whereas Answer B is overly brief and uses incorrect mathematical terminology."
   }
 ]
